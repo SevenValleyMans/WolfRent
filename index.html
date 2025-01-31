@@ -263,13 +263,13 @@
                     font-size: 2.5em !important; 
                 }
 
-                /* 3) 배경 이미지가 잘 보이도록 fixed → scroll, 높이 조정 */
+                /* 3) 배경 이미지: scroll + cover + center top 
+                   - 높이를 낮춰서 (400px) 이미지 확대 정도 완화 */
                 .part2, .part3, .part4, .part5 {
-                    background-attachment: scroll !important; /* 모바일에서 fixed 문제 해결 */
-                    background-size: cover !important;        /* 화면 채우기 */
-                    background-position: center !important;   /* 중앙 정렬 */
-                    height: 200px !important;                 /* 높이 조금 축소 (원하는 값으로 조정 가능) */
-                    width: 400px !important;
+                    background-attachment: scroll !important;
+                    background-size: cover !important;
+                    background-position: center top !important;
+                    height: 400px !important; 
                 }
             }
         </style>
@@ -287,7 +287,7 @@
             <div class="pyt">PICK YOUR TYPE</div>
             <div class="slogan">당신의 허전함을</div>
             <div class="slogan">울프렌트가 채워드릴게요.</div>
-            <div><a href="https://blog.naver.com/wolf_rent" class="button2">더알아보기</a></div>
+            <div><a href="https://www.instagram.com/wolf_rent_/" class="button2">더알아보기</a></div>
             <div class="pyf">PICK YOUR FAVORITE</div>
             <div class="contents1">여러가지 컨턴츠가</div>
             <div class="contents2">당신을 기다리고 있어요.</div>
