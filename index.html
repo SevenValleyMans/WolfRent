@@ -24,6 +24,7 @@
         <meta name="twitter:image" content="https://wolf-rent.com/logo.png">
     
         <link rel="canonical" href="https://wolf-rent.com/">
+        
         <style>
             body{
                 margin: 0;
@@ -163,12 +164,12 @@
             }
             .part2{
                 background: url(drink.jpg) fixed;
-                background-size: cover; /* 이미지를 요소 크기에 맞게 조정 */
-                background-position: center; /* 이미지 위치 중앙 */
-                background-repeat: no-repeat; /* 이미지 반복 금지 */
-                width: 100%; /* 너비 100% */
-                height: 550px; /* 고정 높이 */
-                position: relative; /* 자식 요소 배치 기준 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height: 550px; 
+                position: relative; 
             }
             .email{
                 text-align: center;
@@ -189,30 +190,30 @@
             }
             .part3{
                 background: url(park.jpg) fixed;
-                background-size: cover; /* 이미지를 요소 크기에 맞게 조정 */
-                background-position: center; /* 이미지 위치 중앙 */
-                background-repeat: no-repeat; /* 이미지 반복 금지 */
-                width: 100%; /* 너비 100% */
-                height: 550px; /* 고정 높이 */
-                position: relative; /* 자식 요소 배치 기준 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height: 550px; 
+                position: relative; 
             }
             .part4{
                 background: url(movie.jpg) fixed;
-                background-size: cover; /* 이미지를 요소 크기에 맞게 조정 */
-                background-position: center; /* 이미지 위치 중앙 */
-                background-repeat: no-repeat; /* 이미지 반복 금지 */
-                width: 100%; /* 너비 100% */
-                height: 550px; /* 고정 높이 */
-                position: relative; /* 자식 요소 배치 기준 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height: 550px; 
+                position: relative; 
             }
             .part5{
                 background: url(drive.jpg) fixed;
-                background-size: cover; /* 이미지를 요소 크기에 맞게 조정 */
-                background-position: center; /* 이미지 위치 중앙 */
-                background-repeat: no-repeat; /* 이미지 반복 금지 */
-                width: 100%; /* 너비 100% */
-                height: 550px; /* 고정 높이 */
-                position: relative; /* 자식 요소 배치 기준 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height: 550px; 
+                position: relative; 
             }
             .drive{
                 width: 650px;
@@ -228,6 +229,39 @@
             }
             .chugbunnam{
                 font-size: 280px;
+            }
+
+            /* -------------------------
+               아래부터 모바일 최적화 코드
+               (768px 이하에서만 겹침/여백 수정)
+               ------------------------- */
+            @media (max-width: 768px) {
+                /* 1) 우측 흰 여백 제거 */
+                html, body {
+                    overflow-x: hidden;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* 2) “PICK YOUR TYPE” & “PICK YOUR FAVORITE” 겹침 방지 */
+                .pyt {
+                    position: static !important; /* 문서 흐름에 배치 */
+                    left: auto !important;
+                    bottom: auto !important;
+                    width: auto !important;
+                    margin: 20px 0 10px !important;
+                    text-align: center !important;
+                    font-size: 2.5em !important; /* 모바일 폰트 크기 축소 */
+                }
+                .pyf {
+                    position: static !important; /* 문서 흐름에 배치 */
+                    right: auto !important;
+                    bottom: auto !important;
+                    width: auto !important;
+                    margin: 20px 0 !important;
+                    text-align: center !important;
+                    font-size: 2.5em !important; /* 모바일 폰트 크기 축소 */
+                }
             }
         </style>
     </head>
@@ -266,4 +300,4 @@
             <p class="drive-ex">드라이브를 좋아하는 분들을 위한 데이트</p>
         </section>
     </body>
-</html> 
+</html>
