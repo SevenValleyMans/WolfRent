@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>컨텐츠 | Wolf Rent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="다양한 컨텐츠를 즐겨보세요.">
+  <link rel="canonical" href="https://wolfrent.netlify.app/contents.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* 기본 스타일 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* 헤더 영역: 중앙 정렬된 제목과 부제목 */
+    header {
+      background-color: #1E1E1E;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    /* 컨텐츠 영역 */
+    .content-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .content-item {
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .content-item:hover {
+      transform: translateY(-5px);
+    }
+    .content-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .content-text {
+      padding: 15px;
+    }
+    .content-text h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5em;
+      color: #1E1E1E;
+    }
+    .content-text p {
+      margin: 0;
+      font-size: 1em;
+      color: #666;
+    }
+    /* 반응형 조정 */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>컨텐츠</h1>
+    <p>다양한 컨텐츠를 즐겨보세요</p>
+  </header>
+  <div class="content-container">
+    <div class="content-grid">
+      <!-- 컨텐츠 아이템 1: 데이트 스타일 1 -->
+      <div class="content-item">
+        <img src="content1.jpg" alt="데이트 스타일 1">
+        <div class="content-text">
+          <h2>데이트 스타일 1</h2>
+          <p>특별한 데이트를 위한 아이디어와 컨텐츠를 확인해보세요.</p>
+        </div>
+      </div>
+      <!-- 컨텐츠 아이템 2: 데이트 스타일 2 -->
+      <div class="content-item">
+        <img src="content2.jpg" alt="데이트 스타일 2">
+        <div class="content-text">
+          <h2>데이트 스타일 2</h2>
+          <p>다양한 분위기의 데이트 아이디어를 만나보실 수 있습니다.</p>
+        </div>
+      </div>
+      <!-- 컨텐츠 아이템 3: 데이트 팁 & 가이드 -->
+      <div class="content-item">
+        <img src="content3.jpg" alt="데이트 팁 & 가이드">
+        <div class="content-text">
+          <h2>데이트 팁 & 가이드</h2>
+          <p>성공적인 데이트를 위한 유용한 팁과 가이드를 제공합니다.</p>
+        </div>
+      </div>
+      <!-- 컨텐츠 아이템 4: 패션 & 스타일 -->
+      <div class="content-item">
+        <img src="content4.jpg" alt="패션 & 스타일">
+        <div class="content-text">
+          <h2>패션 & 스타일</h2>
+          <p>데이트에 어울리는 최신 패션과 스타일을 제안합니다.</p>
+        </div>
+      </div>
+      <!-- 컨텐츠 아이템 5: 로맨틱 스팟 추천 -->
+      <div class="content-item">
+        <img src="content5.jpg" alt="로맨틱 스팟 추천">
+        <div class="content-text">
+          <h2>로맨틱 스팟 추천</h2>
+          <p>데이트 장소로 손색없는 로맨틱한 스팟을 추천합니다.</p>
+        </div>
+      </div>
+      <!-- 컨텐츠 아이템 6: 특별 이벤트 -->
+      <div class="content-item">
+        <img src="content6.jpg" alt="특별 이벤트">
+        <div class="content-text">
+          <h2>특별 이벤트</h2>
+          <p>이벤트 및 프로모션 정보를 확인하고 즐겨보세요.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

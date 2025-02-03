@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <meta charset="UTF-8">
         <title>Wolf Rent - 최고의 남친대행 & 렌탈남친 서비스</title>
@@ -13,22 +13,72 @@
         
         <meta property="og:title" content="Wolf Rent - 최고의 남친대행 & 남자 데이트 서비스">
         <meta property="og:description" content="남친대행, 렌탈남친, 데이트대행, 역할대행, 하객대행까지! Wolf Rent는 맞춤형 남친대행 서비스를 제공합니다. 특별한 순간을 위해 프로페셔널한 파트너를 만나보세요.">
-        <meta property="og:url" content="https://wolf-rent.com/">
-        <meta property="og:image" content="https://wolf-rent.com/logo.png">
+        <meta property="og:url" content="https://wolfrent.netlify.app/">
+        <meta property="og:image" content="https://wolfrent.netlify.app/logo.png">
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Wolf Rent - 남친대행 & 맞춤형 데이트 서비스">
     
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Wolf Rent - 최고의 남친대행 & 남자 데이트 서비스">
         <meta name="twitter:description" content="남친대행, 렌탈남친, 데이트대행, 역할대행, 하객대행까지! Wolf Rent는 맞춤형 남친대행 서비스를 제공합니다. 특별한 순간을 위해 프로페셔널한 파트너를 만나보세요.">
-        <meta name="twitter:image" content="https://wolf-rent.com/logo.png">
+        <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.png">
     
-        <link rel="canonical" href="https://wolf-rent.com/">
-        
+        <link rel="canonical" href="https://wolfrent.netlify.app/">
+        <link rel="icon" type="image/png" href="favicon.png">   
         <style>
-            body{
+            html, body {
                 margin: 0;
+                overflow-x: hidden;
+                height: 100%;
             }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            main {
+                flex: 1;
+            }
+            /* header 전체: flex 컨테이너로 만들어 좌우 그룹을 한 줄에 배치 */
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+                background-color: #1E1E1E;
+            }
+
+            /* 왼쪽 그룹: 로고와 텍스트를 더 촘촘하게 */
+            .header-left {
+                display: flex;
+                align-items: center;
+            }
+            .header-left .logo {
+                margin-right: 5px;  /* 간격을 줄임 */
+            }
+
+            /* 오른쪽 그룹: 네비게이션 링크와 구글 로그인 버튼 */
+            .nav-links {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;  /* 줄바꿈 방지 */
+                /* justify-content: flex-start;  기본값 사용 */
+            }
+            .nav-links a {
+                margin: 0 10px;
+                white-space: nowrap;  /* 텍스트 줄바꿈 방지 */
+            }
+
+            /* spacer: flex-grow를 사용하여 남은 공간을 채움 */
+            .spacer {
+                flex-grow: 1;
+            }
+
+            /* 구글 로그인 버튼: spacer 다음에 위치하며 추가 여백을 줄 수 있음 */
+            .googleLogin {
+                /* 이미 spacer가 오른쪽 끝까지 밀어주므로, 필요한 경우 추가로 여백 조정 */
+                margin-left: 20px;  /* 원하는 만큼 조절 */
+            }
+
             .logo{
                 height: 80px;
                 width: 80px;
@@ -39,18 +89,12 @@
             }
             header{
                 background-color: #1E1E1E;
-                position: relative;
             }
-            .userinfo{
-                color: white;
-                position: absolute;
-                right: 20px;
-                top: 30px;
-            }
+            
             .button {
                 text-decoration: none; 
-                color: #1E1E1E; 
-                background-color: white; 
+                color: white; 
+                background-color: #1E1E1E; 
                 padding: 10px 20px; 
                 border-radius: 5px; 
                 font-size: 16px;
@@ -58,6 +102,7 @@
             .button:hover {
                 background-color: #1E1E1E; 
                 color: white;
+                font-size: 20px;
             }
             h1{
                 text-align: center;
@@ -72,12 +117,12 @@
             }
             .part1{
                 background: url(couple1.jpg);
-                background-size: cover; /* 이미지를 요소 크기에 맞게 조정 */
-                background-position: center; /* 이미지 위치 중앙 */
-                background-repeat: no-repeat; /* 이미지 반복 금지 */
-                width: 100%; /* 너비 100% */
-                height: 550px; /* 고정 높이 */
-                position: relative; /* 자식 요소 배치 기준 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height: 550px; 
+                position: relative; 
             }
             .pyt{
                 font-size: 4em;
@@ -230,20 +275,16 @@
             .chugbunnam{
                 font-size: 280px;
             }
-
             /* -------------------------
                아래부터 모바일 최적화 코드
                (768px 이하에서만 겹침/여백 및 배경 이미지 수정)
-               ------------------------- */
+            ------------------------- */
             @media (max-width: 768px) {
-                /* 1) 우측 흰 여백 제거 */
                 html, body {
                     overflow-x: hidden;
                     margin: 0;
                     padding: 0;
                 }
-
-                /* 2) “PICK YOUR TYPE” & “PICK YOUR FAVORITE” 겹침 방지 */
                 .pyt {
                     position: static !important; 
                     left: auto !important;
@@ -262,9 +303,6 @@
                     text-align: center !important;
                     font-size: 2.5em !important; 
                 }
-
-                /* 3) 배경 이미지: scroll + cover + center top 
-                   - 높이를 낮춰서 (400px) 이미지 확대 정도 완화 */
                 .part2, .part3, .part4, .part5 {
                     background-attachment: scroll !important;
                     background-size: cover !important;
@@ -272,41 +310,170 @@
                     height: 400px !important; 
                 }
             }
+            /* 기존 구글 로그인 및 네비게이션 관련 스타일 (absolute 위치 제거) */
+            /* 기존의 .nav-links 관련 코드는 위쪽에 재정의되었으므로 삭제 또는 덮어쓰기합니다. */
         </style>
     </head>
     <body>
         <header>
-            <img class="logo" src="logo.png">
-            <img class="text" src="text.png">
-            <div class="userinfo"><a href="https://www.instagram.com/wolf_rent_/" class="button">instagram</a> <a href="chugbunnam.html" class="button">chugbunnam@gmail.com</a></div>
-        </header>
-        <section class="part1">
-            <h1><strong>당신의 취향에 맞는 남친대행, 렌탈남친</strong></h1>
-            <p>저희 서비스에 관심을 가져주셔서 감사합니다.</p>  
-            <div class="email">문의 및 상담은 DM 또는 이메일로 진행되며, 신속하고 정확하게 답변드리겠습니다.</div>
-            <div class="pyt">PICK YOUR TYPE</div>
-            <div class="slogan">당신의 허전함을</div>
-            <div class="slogan">울프렌트가 채워드릴게요.</div>
-            <div><a href="https://blog.naver.com/wolf_rent" class="button2">블로그</a></div>
-            <div class="pyf">PICK YOUR FAVORITE</div>
-            <div class="contents1">여러가지 컨턴츠가</div>
-            <div class="contents2">당신을 기다리고 있어요.</div>
+            <!-- 왼쪽: 로고와 텍스트 및 네비게이션 링크 -->
+            <div class="header-left">
+                <img class="logo" src="logo.png" alt="Wolf Rent 로고">
+                <img class="text" src="text.png" alt="Wolf Rent 텍스트 로고">
+                <nav class="nav-links">
+                    <a href="index.html" class="button">홈</a>
+                    <a href="about.html" class="button">울프렌트 소개</a>
+                    <a href="contents.html" class="button">컨텐츠</a>
+                    <a href="faq.html" class="button">자주 묻는 질문</a>
+                    <a href="review-form.html" class="button">이용후기</a>
+            </div>
+            <!-- 오른쪽: 네비게이션 및 구글 로그인 -->
+            
+                <!-- 여기에 spacer를 추가하여 나머지 공간을 채우고 -->
+            <div class="spacer"></div>
+                <!-- 구글 로그인 -->
+                <form>
+                    <div class="googleLogin">
+                        <img 
+                          id="googleLogin" 
+                          src="googlelogin.png" 
+                          alt="Sign in with Google" 
+                          class="login-button"
+                          style="width: 200px; cursor: pointer;"
+                        />
+                    </div>
+                </form>
+            </nav>
+          </header>
+          
+        <main>
+            <section class="part1">
+                <h1><strong>당신의 취향에 맞는 남친대행, 렌탈남친</strong></h1>
+                <p>저희 서비스에 관심을 가져주셔서 감사합니다.</p>  
+                <div class="email">문의 및 상담은 DM 또는 이메일로 진행되며, 신속하고 정확하게 답변드리겠습니다.</div>
+                <div class="pyt">PICK YOUR TYPE</div>
+                <div class="slogan">당신의 허전함을</div>
+                <div class="slogan">울프렌트가 채워드릴게요.</div>
+                <div><a href="https://blog.naver.com/wolf_rent" class="button2">블로그</a></div>
+                <div class="pyf">PICK YOUR FAVORITE</div>
+                <div class="contents1">여러가지 컨턴츠가</div>
+                <div class="contents2">당신을 기다리고 있어요.</div>
+            </section>
+            <section class="part2">
+                <h1 class="title">음주 데이트</h1>
+                <p class="title-ex">술친구가 필요한 분들을 위한 데이트</p>
+            </section>
+            <section class="part3">
+                <h1 class="title">산책 데이트</h1>
+                <p class="title-ex">산책을 좋아하는 분들을 위한 데이트</p>
+            </section>
+            <section class="part4">
+                <h1 class="title">영화 데이트</h1>
+                <p class="title-ex">영화를 좋아하는 분들을 위한 데이트</p>
+            </section>
+            <section class="part5">
+                <h1 class="drive">드라이브 데이트</h1>
+                <p class="drive-ex">드라이브를 좋아하는 분들을 위한 데이트</p>
+            </section>
+        </main>
+        <!-- 블로그 최신 포스트 영역 추가 -->
+        <section id="blog-feed">
+            <h2>최신 블로그 포스트</h2>
+            <div id="feed-content">로딩 중...</div>
         </section>
-        <section class="part2">
-            <h1 class="title">음주 데이트</h1>
-            <p class="title-ex">술친구가 필요한 분들을 위한 데이트</p>
-        </section>
-        <section class="part3">
-            <h1 class="title">산책 데이트</h1>
-            <p class="title-ex">산책을 좋아하는 분들을 위한 데이트</p>
-        </section>
-        <section class="part4">
-            <h1 class="title">영화 데이트</h1>
-            <p class="title-ex">영화를 좋아하는 분들을 위한 데이트</p>
-        </section>
-        <section class="part5">
-            <h1 class="drive">드라이브 데이트</h1>
-            <p class="drive-ex">드라이브를 좋아하는 분들을 위한 데이트</p>
-        </section>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Wolf Rent. All Rights Reserved.</p>
+            </div>
+            <!-- Schema.org JSON-LD 구조화 데이터 -->
+            <script type="application/ld+json">
+                {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "울프렌트",
+                "image": "https://wolfrent.netlify.app/logo.png",
+                "url": "https://wolfrent.netlify.app/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "대구",
+                    "addressRegion": "대구광역시",
+                    "addressCountry": "KR"
+                },
+                "description": "남친대행, 렌탈남친, 데이트대행 등 맞춤형 데이트 서비스를 제공하는 울프렌트.",
+                "openingHours": ["Mo-Su 00:00-23:59"]
+                }
+            </script>
+        </footer> 
+        <script>
+            // 네이버 블로그 RSS 피드 URL (블로그 아이디: dlrkdgml3737)
+            const feedUrl = 'https://rss.blog.naver.com/dlrkdgml3737.xml';
+            
+            // Thingproxy 프록시를 사용하여 CORS 문제 해결
+            const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+            
+            fetch(proxyUrl + feedUrl)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "text/xml");
+                    const items = xmlDoc.querySelectorAll("item");
+                    
+                    let output = "<ul>";
+                    // 최신 5개 포스트만 출력 (필요에 따라 개수 조절)
+                    items.forEach((item, index) => {
+                        if(index < 5) {
+                            const title = item.querySelector("title").textContent;
+                            const link = item.querySelector("link").textContent;
+                            output += `<li><a href="${link}" target="_blank">${title}</a></li>`;
+                        }
+                    });
+                    output += "</ul>";
+                    
+                    document.getElementById("feed-content").innerHTML = output;
+                })
+                .catch(error => {
+                    console.error("RSS 피드 불러오기 에러:", error);
+                    document.getElementById("feed-content").textContent = "블로그 피드를 불러오는 데 실패했습니다.";
+                });
+        </script>
+        <!-- Firebase 구글 로그인 모듈 스크립트 추가 -->
+        <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+          import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+          import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+
+          const firebaseConfig = {
+            apiKey: "AIzaSyDDv6vVR1NHSgl8ZWHBZDqYqdWDHfX8KHM",
+            authDomain: "wolf-rent-28e6c.firebaseapp.com",
+            projectId: "wolf-rent-28e6c",
+            storageBucket: "wolf-rent-28e6c.firebasestorage.app",
+            messagingSenderId: "516126424503",
+            appId: "1:516126424503:web:0a08118517990925883c32",
+            measurementId: "G-R8JKZ86N6N"
+          };
+
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+          const auth = getAuth(app);
+          const provider = new GoogleAuthProvider();
+
+          document.addEventListener("DOMContentLoaded", () => {
+            const googleLoginBtn = document.getElementById("googleLogin");
+            if (googleLoginBtn) {
+              googleLoginBtn.addEventListener("click", (event) => {
+                event.preventDefault();
+                signInWithPopup(auth, provider)
+                  .then((result) => {
+                    console.log("로그인 성공:", result.user);
+                  })
+                  .catch((error) => {
+                    console.error("로그인 오류:", error);
+                  });
+              });
+            } else {
+              console.error("구글 로그인 버튼을 찾을 수 없습니다.");
+            }
+          });
+        </script>
     </body>
 </html>

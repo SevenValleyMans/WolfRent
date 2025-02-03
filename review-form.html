@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이용 후기 | Wolf Rent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wolf Rent 이용 후기 페이지입니다. 고객님들의 소중한 후기를 확인하거나 남겨보세요.">
+  <style>
+    /* 기본 폰트 및 배경 설정 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    /* 헤더 영역: 제목과 홈 버튼을 가운데 정렬 */
+    .review-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* 제목과 버튼 사이 간격 */
+      margin-bottom: 30px;
+    }
+    .review-header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .home-button {
+      text-decoration: none;
+      background-color: #1E1E1E;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .home-button:hover {
+      background-color: #333;
+    }
+    .reviews-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .no-reviews {
+      font-size: 1.2em;
+      margin-top: 40px;
+      line-height: 1.5;
+    }
+    .submit-review {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #1E1E1E;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .submit-review:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- 헤더 영역: 제목과 홈 버튼을 가운데 정렬 -->
+  <div class="review-header">
+    <h1>이용 후기</h1>
+    <a href="index.html" class="home-button">홈으로</a>
+  </div>
+  
+  <div class="reviews-container">
+    <!-- 리뷰 목록 영역 (현재는 후기가 없으므로 안내 메시지 표시) -->
+    <div class="no-reviews">
+      서비스 준비 단계입니다.<br>
+      클릭해주셔서 감사합니다!.
+    </div>
+    <!-- 리뷰 작성 버튼: 클릭 시 리뷰 작성 폼 페이지(review-form.html)로 이동 -->
+    <a href="review-form.html" class="submit-review">리뷰 작성하기</a>
+  </div>
+</body>
+</html>
