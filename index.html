@@ -46,55 +46,80 @@
                 padding: 10px 20px;
                 background-color: #1E1E1E;
             }
-            /* 왼쪽 그룹: 로고와 텍스트 및 네비게이션 링크 */
+
+            /* 왼쪽 그룹: 로고와 텍스트를 더 촘촘하게 */
             .header-left {
                 display: flex;
                 align-items: center;
             }
             .header-left .logo {
-                height: 80px;
-                width: 80px;
-                margin-right: 5px;  /* 간격 줄임 */
+                margin-right: 5px;  /* 간격을 줄임 */
             }
-            .header-left .text {
-                height: 80px;
-                width: 160px;
-                margin-right: 20px;  /* 텍스트와 네비게이션 사이 간격 */
-            }
+
+            /* 오른쪽 그룹: 네비게이션 링크와 구글 로그인 버튼 */
             .nav-links {
                 display: flex;
                 align-items: center;
                 flex-wrap: nowrap;  /* 줄바꿈 방지 */
+                /* justify-content: flex-start;  기본값 사용 */
             }
             .nav-links a {
                 margin: 0 10px;
                 white-space: nowrap;  /* 텍스트 줄바꿈 방지 */
-                text-decoration: none;
-                color: white;
-                background-color: #1E1E1E;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 16px;
-                transition: font-size 0.3s ease;
             }
-            .nav-links a:hover {
-                font-size: 20px;
-            }
+
             /* spacer: flex-grow를 사용하여 남은 공간을 채움 */
             .spacer {
                 flex-grow: 1;
             }
-            /* 구글 로그인 버튼 */
+
+            /* 구글 로그인 버튼: spacer 다음에 위치하며 추가 여백을 줄 수 있음 */
             .googleLogin {
-                margin-left: 20px;  /* 필요 시 여백 조정 */
+                /* 이미 spacer가 오른쪽 끝까지 밀어주므로, 필요한 경우 추가로 여백 조정 */
+                margin-left: 20px;  /* 원하는 만큼 조절 */
             }
-            .googleLogin img {
-                width: 200px;
-                cursor: pointer;
+
+            .logo{
+                height: 80px;
+                width: 80px;
             }
-            /* 기타 기존 스타일 (본문, 파트 등) 그대로 유지 */
+            .text{
+                height: 80px;
+                width: 160px;        
+            }
+            header{
+                background-color: #1E1E1E;
+            }
+            
+            .button {
+                text-decoration: none; 
+                color: white; 
+                background-color: #1E1E1E; 
+                padding: 10px 20px; 
+                border-radius: 5px; 
+                font-size: 16px;
+            }
+            .button:hover {
+                background-color: #1E1E1E; 
+                color: white;
+                font-size: 20px;
+            }
+            h1{
+                text-align: center;
+                font-size: 50px;
+                margin: 0;
+                color: #1E1E1E;
+            }
+            p{
+                text-align: center;
+                font-size: 20px; 
+                color: #1E1E1E;
+            }
             .part1{
-                background: url(couple1.jpg) center center/cover no-repeat;
+                background: url(couple1.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
                 width: 100%; 
                 height: 550px; 
                 position: relative; 
@@ -183,7 +208,10 @@
                 }
             }
             .part2{
-                background: url(drink.jpg) center center/cover no-repeat;
+                background: url(drink.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
                 width: 100%; 
                 height: 550px; 
                 position: relative; 
@@ -206,19 +234,28 @@
                 color: white;
             }
             .part3{
-                background: url(park.jpg) center center/cover no-repeat;
+                background: url(park.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
                 width: 100%; 
                 height: 550px; 
                 position: relative; 
             }
             .part4{
-                background: url(movie.jpg) center center/cover no-repeat;
+                background: url(movie.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
                 width: 100%; 
                 height: 550px; 
                 position: relative; 
             }
             .part5{
-                background: url(drive.jpg) center center/cover no-repeat;
+                background: url(drive.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
                 width: 100%; 
                 height: 550px; 
                 position: relative; 
@@ -238,13 +275,61 @@
             .chugbunnam{
                 font-size: 280px;
             }
-            /* 기존 모바일 최적화 코드 (본문 배경 등) 유지 */
+            /* -------------------------
+               아래부터 모바일 최적화 코드
+               (768px 이하에서만 겹침/여백 및 배경 이미지 수정)
+            ------------------------- */
             @media (max-width: 768px) {
-                html, body {
-                    overflow-x: hidden;
-                    margin: 0;
-                    padding: 0;
+                /* 헤더 전체를 세로 배치하고 중앙 정렬 */
+                header {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 10px;
                 }
+                
+                /* 왼쪽 그룹: 로고, 텍스트, 네비게이션 링크를 세로로 배치 */
+                .header-left {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                /* 로고 크기 및 간격 조정 */
+                .header-left .logo {
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    height: 60px;
+                    width: 60px;
+                }
+                
+                /* 텍스트 이미지 크기 및 간격 조정 */
+                .header-left .text {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                    height: 60px;
+                    width: 130px;
+                }
+                
+                /* 네비게이션 링크를 wrap하고 중앙 정렬 */
+                .nav-links {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .nav-links a {
+                    margin: 5px;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                }
+                
+                /* 구글 로그인 버튼 크기 조정 */
+                .googleLogin img {
+                    width: 150px;
+                }
+                
+                /* spacer 요소는 모바일에서는 숨김 */
+                .spacer {
+                    display: none;
+                }
+
                 .pyt {
                     position: static !important; 
                     left: auto !important;
@@ -269,46 +354,9 @@
                     background-position: center top !important;
                     height: 400px !important; 
                 }
-                /* 모바일 헤더 최적화: 헤더를 세로 배치 */
-                header {
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 10px;
-                }
-                .header-left {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                .header-left .logo {
-                    margin-right: 0;
-                    margin-bottom: 5px;
-                    height: 60px;
-                    width: 60px;
-                }
-                .header-left .text {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                    height: 60px;
-                    width: 130px;
-                }
-                .nav-links {
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
-                .nav-links a {
-                    margin: 5px;
-                    padding: 8px 12px;
-                    font-size: 14px;
-                }
-                /* 구글 로그인 버튼 크기 조정 */
-                .googleLogin img {
-                    width: 150px;
-                }
-                /* spacer 제거 (세로 배치 시 필요 없으므로) */
-                .spacer {
-                    display: none;
-                }
             }
+            /* 기존 구글 로그인 및 네비게이션 관련 스타일 (absolute 위치 제거) */
+            /* 기존의 .nav-links 관련 코드는 위쪽에 재정의되었으므로 삭제 또는 덮어쓰기합니다. */
         </style>
     </head>
     <body>
@@ -323,22 +371,25 @@
                     <a href="contents.html" class="button">컨텐츠</a>
                     <a href="faq.html" class="button">자주 묻는 질문</a>
                     <a href="review-form.html" class="button">이용후기</a>
-                </nav>
             </div>
-            <!-- 오른쪽: 구글 로그인 -->
+            <!-- 오른쪽: 네비게이션 및 구글 로그인 -->
+            
+                <!-- 여기에 spacer를 추가하여 나머지 공간을 채우고 -->
             <div class="spacer"></div>
-            <form>
-                <div class="googleLogin">
-                    <img 
-                      id="googleLogin" 
-                      src="googlelogin.png" 
-                      alt="Sign in with Google" 
-                      class="login-button"
-                      style="width: 200px; cursor: pointer;"
-                    />
-                </div>
-            </form>
-        </header>
+                <!-- 구글 로그인 -->
+                <form>
+                    <div class="googleLogin">
+                        <img 
+                          id="googleLogin" 
+                          src="googlelogin.png" 
+                          alt="Sign in with Google" 
+                          class="login-button"
+                          style="width: 200px; cursor: pointer;"
+                        />
+                    </div>
+                </form>
+            </nav>
+          </header>
           
         <main>
             <section class="part1">
@@ -382,22 +433,22 @@
             <!-- Schema.org JSON-LD 구조화 데이터 -->
             <script type="application/ld+json">
                 {
-                  "@context": "https://schema.org",
-                  "@type": "LocalBusiness",
-                  "name": "울프렌트",
-                  "image": "https://wolfrent.netlify.app/logo.png",
-                  "url": "https://wolfrent.netlify.app/",
-                  "address": {
-                      "@type": "PostalAddress",
-                      "addressLocality": "대구",
-                      "addressRegion": "대구광역시",
-                      "addressCountry": "KR"
-                  },
-                  "description": "남친대행, 렌탈남친, 데이트대행 등 맞춤형 데이트 서비스를 제공하는 울프렌트.",
-                  "openingHours": ["Mo-Su 00:00-23:59"]
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "울프렌트",
+                "image": "https://wolfrent.netlify.app/logo.png",
+                "url": "https://wolfrent.netlify.app/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "대구",
+                    "addressRegion": "대구광역시",
+                    "addressCountry": "KR"
+                },
+                "description": "남친대행, 렌탈남친, 데이트대행 등 맞춤형 데이트 서비스를 제공하는 울프렌트.",
+                "openingHours": ["Mo-Su 00:00-23:59"]
                 }
             </script>
-        </footer>
+        </footer> 
         <script>
             // 네이버 블로그 RSS 피드 URL (블로그 아이디: dlrkdgml3737)
             const feedUrl = 'https://rss.blog.naver.com/dlrkdgml3737.xml';
