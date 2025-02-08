@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- [수정] 타이틀 보강 (남친대행·렌탈남친 키워드 추가) -->
+  <title>데이트 팁 & 가이드 | 남친대행 렌탈남친 콘텐츠 - Wolf Rent</title>
+  
+  <!-- [추가/보강] 메타 태그들 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 구체적인 키워드, 소개를 포함한 description -->
+  <meta name="description" content="남친대행 렌탈남친 데이트대행 역할대행 하객대행까지! Wolf Rent와 함께 남친대행, 렌탈남친 서비스와 다양한 콘텐츠를 즐겨보세요.">
+  
+  <link rel="canonical" href="https://wolfrent.netlify.app/역할대행">
+  <link rel="icon" type="image/webp" href="logo.webp">
+
+  <!-- [추가] Open Graph 메타 태그 (SNS 공유 시) -->
+  <meta property="og:title" content="콘텐츠 | Wolf Rent - 남친대행 렌탈남친">
+  <meta property="og:description" content="남친대행 렌탈남친 데이트대행 역할대행 하객대행까지! Wolf Rent와 함께 남친대행, 렌탈남친 서비스와 다양한 콘텐츠를 즐겨보세요.">
+  <meta property="og:url" content="https://wolfrent.netlify.app/역할대행">
+  <!-- 대표 이미지가 있다면 변경 -->
+  <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="울프렌트(Wolf Rent)">
+
+  <!-- [추가] Twitter 메타 태그 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="컨텐츠 | Wolf Rent - 남친대행 렌탈남친">
+  <meta name="twitter:description" content="남친대행 렌탈남친 데이트대행 역할대행 하객대행까지! Wolf Rent와 함께 남친대행, 렌탈남친 서비스와 다양한 콘텐츠를 즐겨보세요.">
+  <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
+
+  <!-- [중요] Firebase 스크립트 제거하고, header.js만 import -->
+  <script type="module" src="header.js"></script>
+
+  <style>
+    :root {
+      --brand-color: #ffffff; /* 원하는 색상 (현재 흰색) */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth; /* 스크롤 애니메이션 */
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #1E1E1E; 
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 80px;
+      width: 80px;
+      margin-right: 5px; 
+    }
+    .text {
+      height: 80px;
+      width: 160px; 
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      white-space: nowrap;
+      text-decoration: none;
+      color: white;
+      background-color: #1E1E1E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .nav-links a:hover {
+      font-size: 20px;
+    }
+    .spacer {
+      flex-grow: 1;
+    }
+    .googleLogin {
+      margin-left: 20px;
+    }
+    .googleLogin img {
+      width: 200px;
+      cursor: pointer;
+    }
+    /* 현재 페이지 a.active */
+    .nav-links a.active {
+      color: var(--brand-color)!important;
+      border-bottom: 2px solid var(--brand-color);
+      padding-bottom: 3px;
+    }
+
+    .content-hero {
+      height: 230px;
+      position: relative;
+      background: url(kb4.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 70% 40%;
+      padding: 60px 20px 150px; 
+      text-align: center;
+      color: white;
+    }
+    .content-hero h1 {
+      position: absolute;
+      left: 90px;
+      top: 90px;
+      font-size: 5em;
+      margin-bottom: 10px;
+      animation: slide 2s;
+    }
+    .content-hero p {
+      position: absolute;
+      left: 90px;
+      top: 260px;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      animation: slide 2s;
+    }
+    @keyframes slide {
+      from {
+        left: -180px;
+        opacity: 0;
+      }
+      to {
+        left: 90px;
+        opacity: 1;
+      }
+    }
+
+    .content-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* [수정] 큰 화면에서는 3열, 중간 화면에서는 2열, 작은 화면에서는 1열 */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 기본 3열 */
+      gap: 20px;
+    }
+    @media (max-width: 992px) {
+      .content-grid {
+        grid-template-columns: repeat(2, 1fr); /* 중간 사이즈 = 2열 */
+      }
+    }
+    @media (max-width: 576px) {
+      .content-grid {
+        grid-template-columns: 1fr; /* 모바일 = 1열 */
+      }
+    }
+    /* =============================================
+       모바일 최적화를 위한 미디어 쿼리
+       (768px 이하 화면일 때 적용)
+    ============================================= */
+    @media (max-width: 768px) {
+      /* 헤더 구조 조정 */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      /* 로고 크기 축소 */
+      .header-left .logo,
+      .header-left .text {
+        width: 60px;
+        height: 60px;
+      }
+      /* 내비게이션 링크 크기/여백 조정 */
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+    .content-item {
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .content-item:hover {
+      transform: translateY(-5px);
+    }
+    .content-text {
+      padding: 15px;
+    }
+    .content-text h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5em;
+      color: #1E1E1E;
+    }
+    .content-text p {
+      margin: 0;
+      font-size: 1em;
+      color: #666;
+    }
+
+    .extra-info {
+      display: none; 
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #444;
+    }
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #1E1E1E;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .read-more-btn:hover {
+      background-color: #333;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* [추가/보강] 모바일 최적화를 위한 미디어 쿼리 */
+    /* 이미 일부 media query가 있으므로, 폰트 사이즈/여백 등을 추가 조정 */
+    @media (max-width: 768px) {
+      .content-hero h1 {
+        font-size: 2em;
+      }
+      .content-hero p {
+        font-size: 1em;
+      }
+      /* 전체 패딩 약간 줄이기 */
+      .content-container {
+        margin: 20px auto;
+        padding: 0 10px;
+      }
+      .read-more-btn {
+        font-size: 0.85em;
+        padding: 5px;
+      }
+    }
+    @keyframes rotate-center {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    .rotate-center {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      animation: rotate-center .6s ease-in-out both;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header>
+    <div class="header-left">
+      <img class="logo" src="logo.webp" alt="남친대행 서비스를 제공하는 울프렌트 로고" loading="lazy">
+      <img class="text" src="text.webp" alt="렌탈남친 서비스를 제공하는 울프렌트 로고" loading="lazy">
+      <nav class="nav-links">
+        <a href="index.html" class="button">홈</a>
+        <a href="남친대행.html" class="button">울프렌트 소개</a>
+        <a href="역할대행.html" class="button active">컨텐츠</a>
+        <a href="애인대행.html" class="button">자주 묻는 질문</a>
+        <a href="한국렌탈남친.html" class="button">이용후기</a>
+        <a href="렌탈남친.html" class="button">고민 상담</a>
+
+      </nav>
+    </div>
+    <div class="spacer"></div>
+    <form>
+      <div class="googleLogin">
+        <img
+          id="googleLogin"
+          src="googlelogin.webp"
+          alt="Sign in with Google"
+          class="login-button"
+          style="width: 200px; height: 50px; cursor: pointer;"
+          loading="lazy"
+        />
+    </div>
+    </form>
+  </header>
+
+  <!-- 상단 배너 -->
+  <section class="content-hero">
+    <h1>컨텐츠</h1>
+    <p>다양한 컨텐츠를 즐겨보세요</p>
+    <img src="logo.webp" width="100" height="100" alt="남친대행 서비스를 제공하는 울프렌트 로고" class="rotate-center" loading="lazy">
+  </section>
+
+  <div class="content-container">
+    <div class="content-grid">
+      <!-- 카드 1: alt 수정 -->
+      <div class="content-item">
+        <img src="romantic.webp" style="display: block; width: 100%; height: 250px;" alt="남친대행 서비스를 제공하는 울프렌트의 데이트 스타일 1" loading="lazy">
+
+        <div class="content-text">
+          <h2>로맨틱 데이트 코스</h2>
+          <p>특별한 데이트를 위한 아이디어를 확인해보세요.</p>
+          <div class="extra-info">
+            레스토랑 예약, 야경 명소 방문 등 
+            더욱 특별한 이벤트 요소를 담아내는 코스.
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+
+      <!-- 카드 2: alt 수정 -->
+      <div class="content-item">
+        <img src="comfortable.webp" style="display: block; width: 100%; height: 250px;" alt="렌탈남친 서비스를 제공하는 울프렌트의 데이트 스타일 2" loading="lazy">
+        <div class="content-text">
+          <h2>편안한 데이트 코스</h2>
+          <p>부담없이 즐기는 다양한 액티비티.</p>
+          <div class="extra-info">
+            가벼운 산책, 카페 투어, 실내 액티비티 등
+            대화에 집중할 수 있는 편안한 코스.
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+
+      <!-- 카드 3: alt 수정 -->
+      <div class="content-item">
+        <img src="datetip.webp" style="display: block; width: 100%; height: 250px;" alt="남친대행 서비스를 제공하는 울프렌트에 데이트 팁 & 가이드" loading="lazy">
+        <div class="content-text">
+          <h2>데이트 팁 &amp; 가이드</h2>
+          <p>성공적인 데이트를 위한 다양한 조언.</p>
+          <div class="extra-info">
+            처음 만나는 사람과 어색함을 극복하는 법,
+            대화 주제, 깜짝 이벤트 아이디어 등
+            현장에서 도움되는 실전 팁.
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+
+      <!-- 카드 4: alt 수정 -->
+      <div class="content-item">
+        <img src="park.webp" style="display: block; width: 100%; height: 250px;" alt="렌탈남친 서비스를 제공하는 울프렌트에 패션 & 스타일" loading="lazy">
+        <div class="content-text">
+          <h2>패션 &amp; 스타일</h2>
+          <p>데이트에 어울리는 최신 패션 트렌드.</p>
+          <div class="extra-info">
+            장소와 계절에 맞는 코디법, 
+            남녀 공용으로 사용 가능한 베스트 아이템 등
+            실용적인 스타일 가이드.
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+
+      <!-- 카드 5: alt 수정 -->
+      <div class="content-item">
+        <img src="spot.webp" style="display: block; width: 100%; height: 250px;" alt="렌탈남친 서비스를 제공하는 울프렌트에 로맨틱 스팟 추천" loading="lazy">
+        <div class="content-text">
+          <h2>로맨틱 스팟 추천</h2>
+          <p>분위기 있는 장소를 엄선해 소개.</p>
+          <div class="extra-info">
+            국내외 명소부터 숨겨진 소도시까지, 
+            데이트 장소로 손색없는 로맨틱 스팟 모음.
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+
+      <!-- 카드 6: alt 수정 -->
+      <div class="content-item">
+        <img src="chat.webp" style="display: block; width: 100%; height: 250px;" alt="남친대행 서비스를 제공하는 울프렌트에 고민상담" loading="lazy">
+        <div class="content-text">
+          <h2>무료 고민상담 서비스</h2>
+          <p>당신이 가진 고민을 울프렌트와 함께 해결해 보세요.</p>
+          <div class="extra-info">
+            Wolf Rent와 함께하는 고민상담,
+            24시간 운행하는 고민상담 서비스를 통해 마음에 평안을 안겨 드립니다.(로그인 후 이용 가능)
+          </div>
+          <a href="#" class="read-more-btn">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: 스크롤 시 페이드인, 자세히 보기 toggle -->
+  <script>
+    // 1. 스크롤 시 .content-item들 페이드인
+    const items = document.querySelectorAll('.content-item');
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.8s forwards';
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    items.forEach(item => {
+      scrollObserver.observe(item);
+    });
+
+    // 2. "자세히 보기" 버튼 클릭 시 extra-info 토글
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    readMoreBtns.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const extraInfo = btn.previousElementSibling; // 바로 앞 요소 .extra-info
+        if(extraInfo.style.display === 'block') {
+          extraInfo.style.display = 'none';
+          btn.textContent = '자세히 보기';
+        } else {
+          extraInfo.style.display = 'block';
+          btn.textContent = '접기';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

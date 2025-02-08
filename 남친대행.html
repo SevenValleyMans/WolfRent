@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- 메타 태그: 제목과 설명에 키워드 추가 -->
+  <title>남친대행 렌탈남친 | 애인·역할대행 서비스 - 울프렌트</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="렌탈남친, 데이트대행, 역할대행, 남친대행까지! Wolf Rent에서는 맞춤형 남친대행 서비스를 제공합니다. 데이트, 애인대행, 이벤트 동반 등 다양한 컨텐츠를 확인해보세요.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="남친대행, 렌탈남친, 데이트대행, 남자친구 대행, 역할대행, 하객대행, 여친대행, 렌탈여친">
+
+    <meta property="og:title" content="Wolf Rent - 최고의 남친대행 & 남자 데이트 서비스">
+    <meta property="og:description" content="렌탈남친, 데이트대행, 역할대행, 남친대행까지! Wolf Rent에서는 맞춤형 남친대행 서비스를 제공합니다. 데이트, 애인대행, 이벤트 동반 등 다양한 컨텐츠를 확인해보세요.">
+    <meta property="og:url" content="https://wolfrent.netlify.app/남친대행">
+    <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wolf Rent - 남친대행 & 맞춤형 데이트 서비스">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wolf Rent - 최고의 남친대행 & 남자 데이트 서비스">
+    <meta name="twitter:description" content="렌탈남친, 데이트대행, 역할대행, 남친대행까지! Wolf Rent에서는 맞춤형 남친대행 서비스를 제공합니다. 데이트, 애인대행, 이벤트 동반 등 다양한 컨텐츠를 확인해보세요.">
+    <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
+
+    <link rel="canonical" href="https://wolfrent.netlify.app/남친대행">
+    <link rel="icon" type="image/webp" href="https://wolfrent.netlify.app/logo.webp">
+
+  <!-- [중요] Firebase 스크립트 제거하고, header.js만 import -->
+  <script type="module" src="header.js"></script>
+
+  <style>
+    :root {
+      --brand-color: #ffffff; 
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      /* 스크롤 시 부드럽게 */
+      scroll-behavior: smooth;
+    }
+
+    /* 상단 헤더 (index.html과 동일) */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #1E1E1E; 
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    /* 이미지 alt 속성 수정 */
+    .logo {
+      height: 80px;
+      width: 80px;
+      margin-right: 5px; 
+    }
+    .text {
+      height: 80px;
+      width: 160px; 
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      white-space: nowrap;
+      text-decoration: none;
+      color: white;
+      background-color: #1E1E1E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .nav-links a:hover {
+      font-size: 20px;
+    }
+    .spacer {
+      flex-grow: 1;
+    }
+    .googleLogin {
+      margin-left: 20px;
+    }
+    .googleLogin img {
+      width: 200px;
+      cursor: pointer;
+    }
+    /* 현재 페이지 a.active */
+    .nav-links a.active {
+      color: var(--brand-color)!important;
+      border-bottom: 2px solid var(--brand-color);
+      padding-bottom: 3px;
+    }
+
+    .about-hero {
+      height: 450px;
+      position: relative;
+      background: url(kb1.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 70% 25%;
+      padding: 60px 20px;
+      text-align: center;
+      color: ivory;
+    }
+    .about-hero h1,
+    .about-hero p,
+    .home-button {
+      position: relative;
+      z-index: 2;
+    }
+    .about-hero h1 {
+      position: absolute;
+      left: 80px;
+      top: 110px;
+      font-size: 5em;
+      margin-bottom: 10px;
+      animation: slide 2s;
+    }
+    .about-hero p {
+      position: absolute;
+      left: 80px;
+      top: 230px;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      animation: slide 2s;
+    }
+    @keyframes slide {
+      from {
+        left: -70px;
+        opacity: 0;
+      }
+      to {
+        left: 80px;
+        opacity: 1;
+      }
+    }
+
+    /* 메인 컨텐츠 영역 */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section {
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #1E1E1E;
+      text-align: center;
+    }
+    .section p {
+      font-size: 1.1em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .mission, .about, .services {
+      background: ivory;
+      padding: 40px 20px;
+      border-radius: 8px;
+      /* [추가] 스크롤 애니메이션 초기 설정 */
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .section ul {
+      list-style-position: inside;
+      padding-left: 0;
+      text-align: left;
+      display: inline-block;
+    }
+    .section li {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+    @keyframes rotate-center {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    .rotate-center {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      animation: rotate-center .6s ease-in-out both;
+    }
+
+    /* ===============================
+       [새 섹션] 팀 소개(Team Section)
+       카드 형태 + fade-in-up
+    ================================ */
+    .team {
+      background: #f5f5f5;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      opacity: 0; /* 스크롤 페이드인 초기 */
+      transform: translateY(40px);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .team-member {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    .team-member img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .team-info {
+      padding: 15px;
+    }
+    .team-info h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #1E1E1E;
+      margin-bottom: 5px;
+    }
+    .team-info p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    /* 스크롤 페이드인 keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =============================================
+       모바일 최적화를 위한 미디어 쿼리
+       (768px 이하 화면일 때 적용)
+    ============================================= */
+    @media (max-width: 768px) {
+      /* 헤더 구조 조정 */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      /* 로고 크기 축소 */
+      .header-left .logo,
+      .header-left .text {
+        width: 60px;
+        height: 60px;
+      }
+      /* 내비게이션 링크 크기/여백 조정 */
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      /* about-hero 영역 */
+      .about-hero {
+        height: auto;
+        padding: 40px 20px;
+      }
+      .about-hero h1 {
+        position: static;
+        font-size: 2em;
+        margin: 20px 0 10px 0;
+        left: auto;
+        top: auto;
+      }
+      .about-hero p {
+        position: static;
+        font-size: 1em;
+        margin: 10px 0 20px 0;
+        left: auto;
+        top: auto;
+      }
+      /* 회전 로고 숨김 또는 크기 축소 */
+      .rotate-center {
+        display: none;
+      }
+
+      /* 섹션 글자 크기 조정 */
+      .section h2 {
+        font-size: 1.5em;
+      }
+      .section p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header>
+    <div class="header-left">
+      <!-- 이미지 alt 속성 수정 -->
+      <img class="logo" src="logo.webp" alt="남친대행 서비스를 제공하는 울프렌트 로고" loading="lazy">
+      <img class="text" src="text.webp" alt="렌탈남친 서비스를 제공하는 울프렌트 로고" loading="lazy">
+      <nav class="nav-links">
+        <a href="index.html" class="button">홈</a>
+        <a href="남친대행.html" class="button active">울프렌트 소개</a>
+        <a href="역할대행.html" class="button">컨텐츠</a>
+        <a href="애인대행.html" class="button">자주 묻는 질문</a>
+        <a href="한국렌탈남친.html" class="button">이용후기</a>
+        <a href="렌탈남친.html" class="button">고민 상담</a>
+
+      </nav>
+    </div>
+    <div class="spacer"></div>
+    <form>
+      <div class="googleLogin">
+        <div class="googleLogin">
+          <img
+            id="googleLogin"
+            src="googlelogin.webp"
+            alt="Sign in with Google"
+            class="login-button"
+            style="width: 200px; height: 50px; cursor: pointer;"
+            loading="lazy"
+          />
+      </div>
+    </form>
+  </header>
+
+  <!-- about-hero (기존 header 부분) -->
+  <section class="about-hero">
+    <h1>울프렌트 소개</h1>
+    <p>우리의 비전, 미션, 그리고 독창적인 서비스를 확인하세요</p>
+    <!-- 이미지 alt 속성 수정 -->
+    <img src="logo.webp" width="100" height="100" alt="남친대행 렌탈남친 서비스를 제공하는 울프렌트 로고" class="rotate-center" loading="lazy">
+  </section>
+  
+  <div class="container">
+    <!-- 회사 소개 섹션: 헤딩 구조 보강 -->
+    <section class="section about">
+      <h2>회사 소개 – 남친대행·렌탈남친 전문 울프렌트</h2>
+      <p>
+        울프렌트는 고객 맞춤형 남친대행 및 렌탈남친 서비스를 제공하는 전문 기업입니다. 단순한 동행 서비스를 넘어, 
+        고객의 라이프스타일과 개별적인 취향을 고려한 맞춤형 경험을 제공하는 것을 목표로 합니다.
+        울프렌트는 고객 한 분 한 분의 기대를 존중하며, 보다 품격 있고 차별화된 서비스를 제공하기 위해 끊임없이 노력하겠습니다.
+      </p>
+    </section>
+    
+    <!-- 미션 및 비전 섹션: 헤딩 구조 보강 -->
+    <section class="section mission">
+      <h2>미션 &amp; 비전 – 남친대행·렌탈남친으로 만들어가는 미래</h2>
+      <p>
+        고객에게 단순한 동행이 아닌 맞춤형 감성 경험을 제공함으로써, 특별한 순간을 더욱 의미 있게 만드는 것입니다. 
+        고객이 원하는 상황과 기대를 반영하여, 진정성 있는 교감을 통해 감동을 선사하는 것이 우리의 핵심 가치입니다. 
+        또한, 바쁜 현대 사회에서 관계의 공백을 느끼는 고객에게 심리적 안정과 만족감을 제공함으로써, 보다 풍요로운 삶을 지원하는 것을 목표로 합니다.
+      </p>
+    </section>
+    
+    <!-- 서비스 소개 섹션: 헤딩 구조 보강 -->
+    <section class="section services">
+      <h2>서비스 소개 – 남친대행·렌탈남친으로 누리는 특별한 경험</h2>
+      <p>울프렌트는 다음과 같은 필요를 가진 고객을 위해 설계되었습니다.</p>
+      
+      <ul>
+          <li>기념일, 행사 등 특별한 순간을 함께할 동반자가 필요한 경우</li>
+          <li>세심한 배려와 매너를 갖춘 파트너와의 교류를 원하는 경우</li>
+          <li>일상에서 벗어나 새로운 경험과 감성을 느끼고 싶은 경우</li>
+      </ul>
+      <p>
+          울프렌트는 엄격한 기준을 바탕으로 검증된 남성 파트너를 통해 고객에게 신뢰할 수 있는 서비스를 제공합니다.  
+          모든 파트너는 철저한 심사를 거쳐 선발되며, 매너, 대화 능력, 상황 대처 능력 등 다양한 요소를 고려하여 교육 및 관리됩니다.
+      </p>
+  
+      <p>
+          또한, 고객의 개인정보 보호와 안전한 이용 환경 조성을 최우선으로 하며,  
+          서비스 이용 과정에서 고객이 편안하고 만족스러운 경험을 할 수 있도록 최선을 다하고 있습니다.
+      </p>
+    </section>  
+  </div>
+
+  <!-- [추가] JS: 스크롤 페이드인 애니메이션 -->
+  <script>
+    // 관찰 대상: .mission, .about, .services, .team
+    const fadeTargets = document.querySelectorAll('.mission, .about, .services, .team');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.8s forwards';
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    fadeTargets.forEach(t => {
+      io.observe(t);
+    });
+
+    // fadeInUp keyframes
+    // 이미 CSS에서 정의한 바가 없으므로 추가
+    const styleEl = document.createElement('style');
+    styleEl.textContent = `
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(styleEl);
+  </script>
+</body>
+</html>

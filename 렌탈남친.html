@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>무료 고민상담 | 남친대행·렌탈남친 - Wolf Rent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="무료 고민상담부터 남친대행·렌탈남친까지! Wolf Rent에서 비공개 1:1 고민 상담을 받아보세요. 익명 보호, 빠른 답변 제공!">
+
+  <!-- Canonical 링크 추가 -->
+  <link rel="canonical" href="https://wolfrent.netlify.app/렌탈남친">
+
+  <!-- Open Graph (OG) 메타 태그 -->
+  <meta property="og:title" content="고민상담 | 남친대행 렌탈남친 Wolf Rent">
+  <meta name="og:description" content="무료 고민상담부터 남친대행·렌탈남친까지! Wolf Rent에서 비공개 1:1 고민 상담을 받아보세요. 익명 보호, 빠른 답변 제공!">
+  <meta property="og:url" content="https://wolfrent.netlify.app/렌탈남친">
+  <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter 카드 메타 태그 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="비공개 고민 상담 | 남친대행·렌탈남친 - Wolf Rent">
+  <meta name="twitter:description" content="남친대행·렌탈남친 전문 울프렌트에서 무료로 제공하는 비공개 고민 상담. 비밀 보장이 유지되며, 작성된 상담 내용은 하루 후 자동 삭제됩니다.">
+  <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
+  <link rel="icon" type="image/webp" href="logo.webp">
+
+  <script type="module" src="header.js"></script>
+  <script type="module" src="counseling.js"></script>
+
+  <style>
+    :root {
+      --brand-color: #ffffff;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #1E1E1E;
+      margin-bottom: 20px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 80px;
+      width: 80px;
+      margin-right: 5px; 
+    }
+    .text {
+      height: 80px;
+      width: 160px; 
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      background-color: #1E1E1E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .nav-links a:hover {
+      font-size: 20px;
+    }
+    .nav-links a.active {
+      color: var(--brand-color)!important;
+      border-bottom: 2px solid var(--brand-color);
+      padding-bottom: 3px;
+    }
+    .googleLogin img {
+      width: 200px;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #counseling-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #message {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      resize: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      background: #1E1E1E;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #333;
+    }
+    #messages {
+      margin-top: 20px;
+    }
+    .message-card {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+    .message-card p {
+      margin: 0;
+      color: #555;
+    }
+    .message-card .reply {
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #444;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+    #admin-page-btn {
+      display: none;
+      margin-top: 20px;
+      background: #007BFF;
+      color: white;
+      font-weight: bold;
+    }
+    #admin-page-btn:hover {
+      background: #0056b3;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+      }
+      /* 헤더 구조 조정 */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      /* 로고 크기 축소 */
+      .header-left .logo,
+      .header-left .text {
+        width: 60px;
+        height: 60px;
+      }
+      /* 내비게이션 링크 크기/여백 조정 */
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img class="logo" src="logo.webp" alt="Wolf Rent 로고" loading="lazy">
+      <img class="text" src="text.webp" alt="Wolf Rent 텍스트 로고" loading="lazy">
+      <nav class="nav-links">
+        <a href="index.html" class="button">홈</a>
+        <a href="남친대행.html" class="button">울프렌트 소개</a>
+        <a href="역할대행.html" class="button">컨텐츠</a>
+        <a href="애인대행.html" class="button">자주 묻는 질문</a>
+        <a href="한국렌탈남친.html" class="button">이용후기</a>
+        <a href="렌탈남친.html" class="button active">고민 상담</a>
+      </nav>
+    </div>
+    <div class="googleLogin">
+      <div class="googleLogin">
+        <img
+          id="googleLogin"
+          src="googlelogin.webp"
+          alt="Sign in with Google"
+          class="login-button"
+          style="width: 200px; height: 50px; cursor: pointer;"
+          loading="lazy"
+        />
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>비공개 고민 상담</h1>
+    <p>
+      고민 상담은 <strong>무료</strong>로 제공되며, <strong>비밀 보장</strong>이 유지됩니다.  
+      작성된 상담 내용은 <strong>하루 후 자동 삭제</strong>됩니다.
+    </p>
+
+    <form id="counseling-form">
+      <textarea id="message" placeholder="고민을 입력하세요..." required></textarea>
+      <button type="submit">상담 제출</button>
+    </form>
+
+    <h2>내 상담 기록</h2>
+    <div id="messages">
+      <p>상담 기록이 없습니다.</p>
+    </div>
+
+    <button id="admin-page-btn" onclick="location.href='admin_counseling.html'">관리자 페이지</button>
+  </div>
+
+  <script type="module">
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+    const auth = getAuth();
+    const adminEmails = ["hermann8hesse@gmail.com", "dlrkdgml0716@gmail.com"];
+    const adminPageBtn = document.getElementById("admin-page-btn");
+
+    onAuthStateChanged(auth, (user) => {
+      if (user && adminEmails.includes(user.email)) {
+        adminPageBtn.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>

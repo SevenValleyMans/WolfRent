@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- [수정/추가] 타이틀·메타 태그 보강 -->
+  <title>실제 이용 후기 | 남친대행·렌탈남친 서비스 - Wolf Rent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- description에 남친대행·렌탈남친 키워드 반영 -->
+  <meta name="description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+
+  <!-- [추가] canonical URL (원하는 주소로 수정 가능) -->
+  <link rel="canonical" href="https://wolfrent.netlify.app/한국렌탈남친">
+
+  <!-- [추가] Open Graph 메타 태그 (SNS 미리보기용) -->
+  <meta property="og:title" content="이용 후기 | 남친대행·렌탈남친 후기 - Wolf Rent">
+  <meta property="og:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
+  <meta property="og:url" content="https://wolfrent.netlify.app/한국렌탈남친">
+  <meta property="og:type" content="website">
+
+  <!-- [추가] 트위터 카드 메타 태그 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="이용 후기 | 남친대행·렌탈남친 후기 - Wolf Rent">
+  <meta name="twitter:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
+  <link rel="icon" type="image/webp" href="logo.webp">
+
+  <!-- [중요] Firebase 스크립트 제거하고, header.js만 import -->
+  <script type="module" src="header.js"></script>
+
+  <style>
+    /* [추가] 브랜드 컬러 변수를 선언해줘야 active 밑줄 색이 보임 */
+    :root {
+      --brand-color: #ffffff; /* 원하는 색상 */
+    }
+
+    /* 기본 폰트 및 배경 설정 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* ================================
+       [추가] 공통 헤더 스타일 
+       (index.html과 동일)
+    ================================= */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #1E1E1E;
+      margin: -20px -20px 20px -20px; /* body padding 때문에 헤더가 꽉 차도록 보정 */
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 80px;
+      width: 80px;
+      margin-right: 5px; 
+    }
+    .text {
+      height: 80px;
+      width: 160px; 
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      background-color: #1E1E1E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .nav-links a:hover {
+      font-size: 20px;
+    }
+    .spacer {
+      flex-grow: 1;
+    }
+    .googleLogin {
+      margin-left: 20px;
+    }
+    .googleLogin img {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    /* [추가] 메뉴 강조: 현재 페이지 a.active */
+    .nav-links a.active {
+      color: var(--brand-color)!important;
+      border-bottom: 2px solid var(--brand-color);
+      padding-bottom: 3px;
+    }
+
+    /* ================================
+       기존 .review-header 관련 스타일 
+       (원본 그대로)
+    ================================= */
+    .review-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; 
+      margin-bottom: 30px;
+    }
+    .review-header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .reviews-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .no-reviews {
+      font-size: 1.2em;
+      margin-top: 40px;
+      line-height: 1.5;
+    }
+    .submit-review {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #1E1E1E;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .submit-review:hover {
+      background-color: #333;
+    }
+
+    /* ================================
+       [추가] 모바일 최적화 미디어 쿼리
+       ================================ */
+    @media (max-width: 768px) {
+      /* 바디 패딩 조정 */
+      body {
+        padding: 10px;
+      }
+      header {
+        margin: -10px -10px 10px -10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .review-header {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .review-header h1 {
+        font-size: 1.6em;
+      }
+      .no-reviews {
+        font-size: 1em;
+        margin-top: 20px;
+      }
+      .submit-review {
+        font-size: 0.9em;
+        padding: 8px 16px;
+      }
+      /* 헤더 구조 조정 */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      /* 로고 크기 축소 */
+      .header-left .logo,
+      .header-left .text {
+        width: 60px;
+        height: 60px;
+      }
+      /* 내비게이션 링크 크기/여백 조정 */
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- [추가] 공통 헤더 (이용후기 페이지에서 "이용후기"에 active 클래스 추가) -->
+  <header>
+    <div class="header-left">
+      <img class="logo" src="logo.webp" alt="Wolf Rent 로고" loading="lazy">
+      <img class="text" src="text.webp" alt="Wolf Rent 텍스트 로고" loading="lazy">
+      <nav class="nav-links">
+        <a href="index.html" class="button">홈</a>
+        <a href="남친대행.html" class="button">울프렌트 소개</a>
+        <a href="역할대행.html" class="button">컨텐츠</a>
+        <a href="애인대행.html" class="button">자주 묻는 질문</a>
+        <!-- 여기서 '이용후기' 링크에만 .active 적용 -->
+        <a href="한국렌탈남친.html" class="button active">이용후기</a>
+        <a href="렌탈남친.html" class="button">고민상담</a>
+
+      </nav>
+    </div>
+    <div class="spacer"></div>
+    <form>
+      <div class="googleLogin">
+        <img
+          id="googleLogin"
+          src="googlelogin.webp"
+          alt="Sign in with Google"
+          class="login-button"
+          style="width: 200px; height: 50px; cursor: pointer;"
+          loading="lazy"
+        />
+    </div>
+    </form>
+  </header>
+
+  <!-- 헤더 영역: 제목과 홈 버튼 (원본 코드 유지) -->
+  <div class="review-header">
+    <h1>이용 후기</h1>
+  </div>
+  
+  <div class="reviews-container">
+    <!-- 리뷰 목록 영역 (현재는 후기가 없으므로 안내 메시지 표시) -->
+    <div class="no-reviews">
+      서비스 준비 단계입니다.<br>
+      클릭해주셔서 감사합니다!.
+    </div>
+    <!-- 리뷰 작성 버튼: 클릭 시 리뷰 작성 폼 페이지(review-form.html)로 이동 -->
+    <a href="review-form.html" class="submit-review">리뷰 작성하기</a>
+  </div>
+</body>
+</html>
