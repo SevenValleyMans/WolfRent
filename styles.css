@@ -341,23 +341,68 @@ p {
         display: none;
     }
     /* 모바일 환경: part1 영역 내 텍스트 위치 재조정 */
+    /* .part1 컨테이너는 고정 높이를 유지하고 패딩을 없애서 이미지 아래에 여분의 흰색 배경이 보이지 않도록 함 */
     .part1 {
-        height: auto;
-        padding: 20px 0;
+        height: 550px;
+        padding: 0; /* 여백 제거 */
         background-position: center;
         overflow: hidden;
+        position: relative;
     }
-    .pyt,
-    .slogan,
-    .pyf,
-    .contents1,
+    /* 배경 이미지는 그대로 전체 영역을 덮도록 */
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    /* 텍스트 요소들은 데스크톱과 유사하게 절대(또는 relative) 위치를 유지하여 이미지 안에 오버레이되도록 함 */
+    .pyt {
+        font-size: 2.5em;
+        position: relative;
+        left: 50px;
+        bottom: -110px;
+        animation: slide 2s ease-out;
+    }
+    .slogan {
+        font-size: 2.5em;
+        position: relative;
+        left: 50px;
+        bottom: -110px;
+        animation: slide 2s ease-out;
+    }
+    .pyf {
+        font-size: 2.5em;
+        position: absolute;
+        right: 50px;
+        bottom: 80px;
+        animation: slide2 2s;
+        text-align: start;
+    }
+    .contents1 {
+        font-size: 2.5em;
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        width: auto;          /* 고정 너비 제거 */
+        max-width: 90%;       /* 필요 시 최대 너비 지정 */
+        text-align: start;
+        animation: slide2 2s;
+        white-space: normal;  /* 줄바꿈 허용 */
+    }
     .contents2 {
-        position: static !important;
-        left: auto !important;
-        bottom: auto !important;
-        margin: 10px auto !important;
-        text-align: center !important;
-        animation: none;
+        font-size: 2.5em;
+        position: absolute;
+        right: 50px;
+        bottom: 30px;
+        width: auto;
+        max-width: 90%;
+        text-align: start;
+        animation: slide2 2s;
+        white-space: normal;
     }
     .pyt,
     .pyf {
