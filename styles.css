@@ -385,22 +385,22 @@ p {
     /* pyt와 slogan은 위로 올리기 위한 transform 적용 */
     .pyt {
         font-size: 1.5em;
-        transform: translateY(-15px); /* 위로 15px 이동 */
+        transform: translateY(-20px); /* 위로 15px 이동 */
     }
     .slogan {
         font-size: 1.3em;
-        transform: translateY(-15px) translateX(15px); /* 위로 15px, 오른쪽으로 15px 이동 */
+        transform: translateY(-25px) translateX(25px); /* 위로 15px, 오른쪽으로 15px 이동 */
     }
   
     /* pyf, contents1, contents2는 아래쪽으로 내려서 겹치지 않도록 */
     .pyf {
         font-size: 1.5em;
-        margin-top: 20px;  /* 기존 위치보다 아래쪽에 배치 */
+        margin-top: 40px;  /* 기존 위치보다 아래쪽에 배치 */
     }
     .contents1,
     .contents2 {
         font-size: 1.2em;
-        margin-top: 20px;  /* pyf와 일정 간격 확보 */
+        margin-top: 40px;  /* pyf와 일정 간격 확보 */
     }
     
     .services-container, .steps-container {
