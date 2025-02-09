@@ -382,29 +382,30 @@ p {
         max-width: 90%;
     }
   
-    /* pyt와 slogan은 위로 올리기 위한 transform 적용 */
+    /* pyt와 slogan의 위치 조정 */
     .pyt {
         font-size: 1.5em;
-        transform: translateY(-20px); /* 위로 15px 이동 */
+        transform: translateY(-20px);
     }
     .slogan {
         font-size: 1.3em;
-        transform: translateY(-25px) translateX(25px); /* 위로 15px, 오른쪽으로 15px 이동 */
+        /* 기존보다 오른쪽으로 더 이동: translateX 값을 25px에서 40px로 수정 */
+        transform: translateY(-25px) translateX(40px);
     }
   
-    /* pyf, contents1, contents2는 아래쪽으로 내려서 겹치지 않도록 */
+    /* pyf와 contents 요소는 아래쪽으로 더 내려 겹치지 않도록 */
     .pyf {
         font-size: 1.5em;
-        margin-top: 40px;  /* 기존 위치보다 아래쪽에 배치 */
+        margin-top: 60px;  /* 기존 40px에서 60px로 조정 */
     }
     .contents1,
     .contents2 {
         font-size: 1.2em;
-        margin-top: 40px;  /* pyf와 일정 간격 확보 */
+        margin-top: 60px;  /* pyf와 일정 간격 확보 */
     }
     
     .services-container, .steps-container {
-        flex-wrap: wrap; /* 작은 화면에서는 자동 줄 바꿈 */
+        flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
     }
@@ -412,7 +413,6 @@ p {
         max-width: 90% !important;
     }
 }
-
 
 /* 블로그 피드 섹션 */
 #blog-feed {
