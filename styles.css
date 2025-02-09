@@ -348,51 +348,59 @@ p {
         background-position: center;
         position: relative;
     }
-    /* 메인 타이틀에 배경 추가해서 대비 강화 */
-    .part1 h1 {
-        font-size: 2em;
-        padding: 10px;
-        background: rgba(0,0,0,0.5);
-        border-radius: 5px;
-        color: var(--brand-color);
-        margin: 20px auto;
-        max-width: 90%;
+    .part1 {
+        position: relative;
+        height: 550px; /* couple1.webp 이미지 높이와 동일 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* 혹시 내용이 넘칠 경우 숨김 처리 */
     }
-    /* 배경 이미지 밝기를 낮춰 텍스트와의 대비 강화 */
+  
+    /* 배경 이미지는 .part1 전체를 덮도록 */
     .part1 .background-image {
-        filter: brightness(60%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
     }
-    
-    /* pyt, pyf, slogan, contents1, contents2 영역 개선 */
+  
+    /* 텍스트 요소들의 기존 위치 지정(absolute, relative 등) 및 여백, 배경 제거 */
+    .part1 h1,
     .pyt,
     .slogan,
     .pyf,
     .contents1,
     .contents2 {
-        position: static !important;
-        left: auto !important;
-        bottom: auto !important;
-        margin: 10px auto !important;
-        text-align: center !important;
-        animation: none;
+        position: relative; /* flex 컨테이너 내에서 자연스럽게 배치 */
+        margin: 5px 0;
+        padding: 0;
+        background: none;  /* 텍스트 배경 제거 */
+        text-align: center;
+        width: auto;
         color: var(--brand-color);
-        background: rgba(0, 0, 0, 0.5); /* 텍스트 뒤에 반투명 배경 추가 */
-        padding: 5px 10px;
-        border-radius: 5px;
-        max-width: 90%;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        /* 애니메이션 효과가 필요하다면 기존 애니메이션 속성은 그대로 사용 가능합니다. */
     }
-    /* 폰트 사이즈 조절로 모바일에서 더 보기 쉽게 */
+  
+    /* 폰트 크기 및 여백은 필요에 맞게 조정 */
+    .part1 h1 {
+        font-size: 1.8em;
+        max-width: 90%;
+    }
     .pyt,
     .pyf {
-        font-size: 2.5em !important;
+        font-size: 1.5em;
     }
     .slogan {
-        font-size: 2em !important;
+        font-size: 1.3em;
     }
     .contents1,
     .contents2 {
-        font-size: 1.2em !important;
+        font-size: 1.2em;
     }
     
     .services-container, .steps-container {
