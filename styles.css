@@ -341,41 +341,23 @@ p {
         display: none;
     }
     /* 모바일 환경: part1 영역 내 텍스트 위치 재조정 */
-    /* 첫 화면 파트: 배경 이미지와 컨테이너 설정 */
-.part1 {
-    width: 100%;
-    height: 550px;
-    position: relative;
-    overflow: hidden; /* 이미지나 텍스트가 컨테이너 밖으로 넘치지 않도록 */
-}
-
-    /* 배경 이미지: couple1.webp가 전체 보이도록 object-fit을 contain으로 변경 */
-    .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* 전체 이미지 표시 */
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+    .part1 {
+        height: auto;
+        padding: 20px 0;
+        background-position: center;
+        overflow: hidden;
     }
-
-    /* contents1과 contents2: 텍스트가 잘리지 않고 자동 줄바꿈되도록 수정 */
+    .pyt,
+    .slogan,
+    .pyf,
     .contents1,
     .contents2 {
-        color: var(--brand-color);
-        position: absolute;
-        right: 50px;
-        /* 기존 bottom 값 유지하거나 필요에 따라 조정 */
-        /* 예시: */
-        /* .contents1 { bottom: 50px; }  */
-        /* .contents2 { bottom: 30px; }  */
-        
-        width: auto;           /* 고정 너비 제거 */
-        max-width: 90%;        /* 컨테이너 너비에 맞춰 최대 너비 지정 */
-        text-align: start;
-        animation: slide2 2s;
-        white-space: normal;   /* 텍스트 줄바꿈 허용 */
+        position: static !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: 10px auto !important;
+        text-align: center !important;
+        animation: none;
     }
     .pyt,
     .pyf {
