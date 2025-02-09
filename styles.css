@@ -341,24 +341,16 @@ p {
         display: none;
     }
     
-    /* part1 영역 및 배경 이미지 개선 */
-    .part1 {
-        height: auto;
-        padding: 20px 0;
-        background-position: center;
-        position: relative;
-    }
     .part1 {
         position: relative;
-        height: 550px; /* couple1.webp 이미지 높이와 동일 */
+        height: 550px; /* 배경 이미지 높이와 동일 */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow: hidden; /* 혹시 내용이 넘칠 경우 숨김 처리 */
+        overflow: hidden;
     }
   
-    /* 배경 이미지는 .part1 전체를 덮도록 */
     .part1 .background-image {
         position: absolute;
         top: 0;
@@ -369,38 +361,46 @@ p {
         z-index: -1;
     }
   
-    /* 텍스트 요소들의 기존 위치 지정(absolute, relative 등) 및 여백, 배경 제거 */
+    /* 모든 텍스트 요소의 기본 스타일 */
     .part1 h1,
     .pyt,
     .slogan,
     .pyf,
     .contents1,
     .contents2 {
-        position: relative; /* flex 컨테이너 내에서 자연스럽게 배치 */
+        position: relative;
         margin: 5px 0;
         padding: 0;
         background: none;  /* 텍스트 배경 제거 */
         text-align: center;
         width: auto;
         color: var(--brand-color);
-        /* 애니메이션 효과가 필요하다면 기존 애니메이션 속성은 그대로 사용 가능합니다. */
     }
   
-    /* 폰트 크기 및 여백은 필요에 맞게 조정 */
     .part1 h1 {
         font-size: 1.8em;
         max-width: 90%;
     }
-    .pyt,
-    .pyf {
+  
+    /* pyt와 slogan은 위로 올리기 위한 transform 적용 */
+    .pyt {
         font-size: 1.5em;
+        transform: translateY(-15px); /* 위로 15px 이동 */
     }
     .slogan {
         font-size: 1.3em;
+        transform: translateY(-15px) translateX(15px); /* 위로 15px, 오른쪽으로 15px 이동 */
+    }
+  
+    /* pyf, contents1, contents2는 아래쪽으로 내려서 겹치지 않도록 */
+    .pyf {
+        font-size: 1.5em;
+        margin-top: 20px;  /* 기존 위치보다 아래쪽에 배치 */
     }
     .contents1,
     .contents2 {
         font-size: 1.2em;
+        margin-top: 20px;  /* pyf와 일정 간격 확보 */
     }
     
     .services-container, .steps-container {
