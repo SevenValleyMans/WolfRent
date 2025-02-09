@@ -340,12 +340,30 @@ p {
     .spacer {
         display: none;
     }
-    /* 모바일 환경: part1 영역 내 텍스트 위치 재조정 */
+    
+    /* part1 영역 및 배경 이미지 개선 */
     .part1 {
         height: auto;
         padding: 20px 0;
         background-position: center;
+        position: relative;
     }
+    /* 메인 타이틀에 배경 추가해서 대비 강화 */
+    .part1 h1 {
+        font-size: 2em;
+        padding: 10px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 5px;
+        color: var(--brand-color);
+        margin: 20px auto;
+        max-width: 90%;
+    }
+    /* 배경 이미지 밝기를 낮춰 텍스트와의 대비 강화 */
+    .part1 .background-image {
+        filter: brightness(60%);
+    }
+    
+    /* pyt, pyf, slogan, contents1, contents2 영역 개선 */
     .pyt,
     .slogan,
     .pyf,
@@ -357,11 +375,26 @@ p {
         margin: 10px auto !important;
         text-align: center !important;
         animation: none;
+        color: var(--brand-color);
+        background: rgba(0, 0, 0, 0.5); /* 텍스트 뒤에 반투명 배경 추가 */
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 90%;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
+    /* 폰트 사이즈 조절로 모바일에서 더 보기 쉽게 */
     .pyt,
     .pyf {
         font-size: 2.5em !important;
     }
+    .slogan {
+        font-size: 2em !important;
+    }
+    .contents1,
+    .contents2 {
+        font-size: 1.2em !important;
+    }
+    
     .services-container, .steps-container {
         flex-wrap: wrap; /* 작은 화면에서는 자동 줄 바꿈 */
         flex-direction: column;
@@ -371,6 +404,7 @@ p {
         max-width: 90% !important;
     }
 }
+
 
 /* 블로그 피드 섹션 */
 #blog-feed {
