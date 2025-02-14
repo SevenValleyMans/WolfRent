@@ -2,11 +2,31 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>이용 후기 | Wolf Rent</title>
+  <title>리뷰 작성하기 | Wolf Rent - 남친대행·렌탈남친 서비스</title>
+  <meta name="description" content="실제 고객들의 남친대행·렌탈남친 서비스 리뷰를 작성해보세요.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Wolf Rent 이용 후기 페이지입니다. 고객님들의 소중한 후기를 확인하거나 남겨보세요.">
+  <link rel="canonical" href="https://wolfrent.netlify.app/렌탈남친">
+
+  <!-- Open Graph, 트위터 카드 등 메타 태그는 그대로 -->
+  <meta property="og:title" content="리뷰 작성하기 | Wolf Rent - 남친대행·렌탈남친 서비스">
+  <meta property="og:description" content="실제 고객들의 남친대행·렌탈남친 서비스 리뷰를 작성해보세요.">
+  <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
+  <meta property="og:url" content="https://wolfrent.netlify.app/렌탈남친">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="리뷰 작성하기 | Wolf Rent - 남친대행·렌탈남친 서비스">
+  <meta name="twitter:description" content="실제 고객들의 남친대행·렌탈남친 서비스 리뷰를 작성해보세요.">
+  <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
+  <link rel="icon" type="image/webp" href="logo.webp">
+
+  <!-- 공통 header.js (Firebase 초기화 및 로그인 처리, Firestore db export 포함) -->
+  <script type="module" src="header.js"></script>
+
   <style>
-    /* 기본 폰트 및 배경 설정 */
+    /* 기존 스타일 유지 */
+    :root {
+      --brand-color: #ffffff;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,71 +34,239 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    /* 헤더 영역: 제목과 홈 버튼을 가운데 정렬 */
-    .review-header {
+    header {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 20px; /* 제목과 버튼 사이 간격 */
-      margin-bottom: 30px;
-    }
-    .review-header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    .home-button {
-      text-decoration: none;
-      background-color: #1E1E1E;
-      color: white;
+      justify-content: space-between;
       padding: 10px 20px;
-      border-radius: 4px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
+      background-color: #1E1E1E;
+      margin: -20px -20px 20px -20px;
     }
-    .home-button:hover {
-      background-color: #333;
+    .header-left {
+      display: flex;
+      align-items: center;
     }
-    .reviews-container {
+    .logo {
+      height: 80px;
+      width: 80px;
+      margin-right: 5px;
+    }
+    .text {
+      height: 80px;
+      width: 160px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      background-color: #1E1E1E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .nav-links a:hover {
+      font-size: 20px;
+    }
+    .nav-links a.active {
+      color: var(--brand-color)!important;
+      border-bottom: 2px solid var(--brand-color);
+      padding-bottom: 3px;
+    }
+    main {
       max-width: 800px;
       margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
       text-align: center;
+      margin-bottom: 20px;
     }
-    .no-reviews {
-      font-size: 1.2em;
-      margin-top: 40px;
-      line-height: 1.5;
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
-    .submit-review {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    form input[type="submit"] {
       background-color: #1E1E1E;
       color: #fff;
+      border: none;
       padding: 10px 20px;
       border-radius: 4px;
-      font-size: 1em;
+      font-size: 16px;
+      cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .submit-review:hover {
+    form input[type="submit"]:hover {
       background-color: #333;
+    }
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: #1E1E1E;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: -10px -10px 10px -10px;
+      }
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo,
+      .text {
+        width: 60px;
+        height: 60px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <!-- 헤더 영역: 제목과 홈 버튼을 가운데 정렬 -->
-  <div class="review-header">
-    <h1>이용 후기</h1>
-    <a href="index.html" class="home-button">홈으로</a>
-  </div>
-  
-  <div class="reviews-container">
-    <!-- 리뷰 목록 영역 (현재는 후기가 없으므로 안내 메시지 표시) -->
-    <div class="no-reviews">
-      서비스 준비 단계입니다.<br>
-      클릭해주셔서 감사합니다!.
+  <!-- 공통 헤더 (header.js 에서 로그인 관련 기능 포함) -->
+  <header>
+    <div class="header-left">
+      <img class="logo" src="logo.webp" alt="Wolf Rent 로고" loading="lazy">
+      <img class="text" src="text.webp" alt="Wolf Rent 텍스트 로고" loading="lazy">
+      <nav class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="남친대행.html">울프렌트 소개</a>
+        <a href="역할대행.html">컨텐츠</a>
+        <a href="애인대행.html">자주 묻는 질문</a>
+        <a href="한국렌탈남친.html">이용후기</a>
+        <a href="렌탈남친.html">고민상담</a>
+      </nav>
     </div>
-    <!-- 리뷰 작성 버튼: 클릭 시 리뷰 작성 폼 페이지(review-form.html)로 이동 -->
-    <a href="review-form.html" class="submit-review">리뷰 작성하기</a>
-  </div>
+  </header>
+
+  <!-- 리뷰 작성 폼 영역 -->
+  <main>
+    <h1>리뷰 작성하기</h1>
+    <!-- action 속성 제거, id 부여 -->
+    <form id="reviewForm">
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+
+      <label for="rating">평점 (1 ~ 5):</label>
+      <input type="number" id="rating" name="rating" min="1" max="5" required placeholder="1에서 5 사이의 숫자">
+
+      <label for="review">리뷰 내용:</label>
+      <textarea id="review" name="review" rows="5" required placeholder="리뷰 내용을 작성해주세요"></textarea>
+
+      <input type="submit" value="리뷰 제출하기">
+    </form>
+    <div class="back-link">
+      <a href="한국렌탈남친.html">이용후기 페이지로 돌아가기</a>
+    </div>
+  </main>
+
+  <!-- 공통 푸터 (변경 없음) -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 렌탈남친 서비스 | 서울 및 전국 서비스 가능</p>
+      <div class="footer-intro">남친대행, 렌탈남친, 애인대행 서비스를 제공하는 울프렌트입니다.</div>
+      <div class="footer-hours">영업시간: 24시간</div>
+      <div class="footer-email">이메일: chugbunnam@gmail.com</div>
+      <a href="https://www.instagram.com/wolf_rent__" target="_blank">인스타그램: @wolf_rent__</a>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "울프렌트",
+        "image": "https://wolfrent.netlify.app/logo.png",
+        "url": "https://wolfrent.netlify.app/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "대구",
+          "addressRegion": "대구광역시",
+          "addressCountry": "KR"
+        },
+        "description": "남친대행, 렌탈남친, 데이트대행 등 맞춤형 데이트 서비스를 제공하는 울프렌트.",
+        "openingHours": ["Mo-Su 00:00-23:59"]
+      }
+    </script>
+  </footer>
+
+  <!-- Firestore를 이용한 리뷰 제출 처리 스크립트 -->
+  <script type="module">
+    import { db } from "./header.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+    const reviewForm = document.getElementById("reviewForm");
+    reviewForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // 폼 데이터 가져오기
+      const name = document.getElementById("name").value.trim();
+      const rating = parseInt(document.getElementById("rating").value, 10);
+      const review = document.getElementById("review").value.trim();
+
+      // 간단한 검증 (필요에 따라 강화 가능)
+      if (!name || !review || rating < 1 || rating > 5) {
+        alert("입력값을 확인해주세요.");
+        return;
+      }
+
+      try {
+        // "reviews" 컬렉션에 새 문서 추가 (작성 시간은 서버 타임스탬프 대신 클라이언트 Date 사용)
+        await addDoc(collection(db, "reviews"), {
+          name,
+          rating,
+          review,
+          createdAt: new Date()
+        });
+        alert("리뷰가 성공적으로 제출되었습니다!");
+        // 제출 후 리뷰 목록 페이지로 이동
+        window.location.href = "한국렌탈남친.html";
+      } catch (error) {
+        console.error("리뷰 저장 중 오류:", error);
+        alert("리뷰 제출 중 오류가 발생했습니다. 다시 시도해주세요.");
+      }
+    });
+  </script>
 </body>
 </html>

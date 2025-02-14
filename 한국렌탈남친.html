@@ -3,38 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <!-- [수정/추가] 타이틀·메타 태그 보강 -->
-  <title>실제 이용 후기 | 남친대행·렌탈남친 서비스 - Wolf Rent</title>
+  <title>이용후기 | 남친대행·렌탈남친·애인대행 | Wolf Rent-역할대행 서비스</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- description에 남친대행·렌탈남친 키워드 반영 -->
-  <meta name="description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <meta name="description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서 애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <link rel="canonical" href="https://wolfrent.netlify.app/남친대행">
 
-  <!-- [추가] canonical URL (원하는 주소로 수정 가능) -->
-  <link rel="canonical" href="https://wolfrent.netlify.app/한국렌탈남친">
-
-  <!-- [추가] Open Graph 메타 태그 (SNS 미리보기용) -->
-  <meta property="og:title" content="이용 후기 | 남친대행·렌탈남친 후기 - Wolf Rent">
-  <meta property="og:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <!-- Open Graph 메타 태그 -->
+  <meta property="og:title" content="이용후기 | 남친대행·렌탈남친·애인대행 | Wolf Rent-역할대행 서비스">
+  <meta property="og:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서 애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
   <meta property="og:image" content="https://wolfrent.netlify.app/logo.webp">
-  <meta property="og:url" content="https://wolfrent.netlify.app/한국렌탈남친">
+  <meta property="og:url" content="https://wolfrent.netlify.app/남친대행">
   <meta property="og:type" content="website">
 
-  <!-- [추가] 트위터 카드 메타 태그 -->
+  <!-- 트위터 카드 메타 태그 -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="이용 후기 | 남친대행·렌탈남친 후기 - Wolf Rent">
-  <meta name="twitter:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서  애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
+  <meta name="twitter:title" content="이용후기 | 남친대행·렌탈남친·애인대행 | Wolf Rent-역할대행 서비스">
+  <meta name="twitter:description" content="실제 고객들의 남친대행 렌탈남친 서비스 이용후기! Wolf Rent에서 애인대행 경험담을 확인하고 직접 후기를 남겨보세요.">
   <meta name="twitter:image" content="https://wolfrent.netlify.app/logo.webp">
   <link rel="icon" type="image/webp" href="logo.webp">
 
-  <!-- [중요] Firebase 스크립트 제거하고, header.js만 import -->
+  <!-- Firebase 스크립트 제거하고, header.js만 import -->
   <script type="module" src="header.js"></script>
 
   <style>
-    /* [추가] 브랜드 컬러 변수를 선언해줘야 active 밑줄 색이 보임 */
     :root {
-      --brand-color: #ffffff; /* 원하는 색상 */
+      --brand-color: #ffffff;
     }
-
-    /* 기본 폰트 및 배경 설정 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -42,18 +37,13 @@
       background-color: #f9f9f9;
       color: #333;
     }
-
-    /* ================================
-       [추가] 공통 헤더 스타일 
-       (index.html과 동일)
-    ================================= */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
       background-color: #1E1E1E;
-      margin: -20px -20px 20px -20px; /* body padding 때문에 헤더가 꽉 차도록 보정 */
+      margin: -20px -20px 20px -20px;
     }
     .header-left {
       display: flex;
@@ -96,18 +86,11 @@
       width: 200px;
       cursor: pointer;
     }
-
-    /* [추가] 메뉴 강조: 현재 페이지 a.active */
     .nav-links a.active {
       color: var(--brand-color)!important;
       border-bottom: 2px solid var(--brand-color);
       padding-bottom: 3px;
     }
-
-    /* ================================
-       기존 .review-header 관련 스타일 
-       (원본 그대로)
-    ================================= */
     .review-header {
       display: flex;
       justify-content: center;
@@ -143,12 +126,7 @@
     .submit-review:hover {
       background-color: #333;
     }
-
-    /* ================================
-       [추가] 모바일 최적화 미디어 쿼리
-       ================================ */
     @media (max-width: 768px) {
-      /* 바디 패딩 조정 */
       body {
         padding: 10px;
       }
@@ -173,7 +151,6 @@
         font-size: 0.9em;
         padding: 8px 16px;
       }
-      /* 헤더 구조 조정 */
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -182,13 +159,11 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      /* 로고 크기 축소 */
       .header-left .logo,
       .header-left .text {
         width: 60px;
         height: 60px;
       }
-      /* 내비게이션 링크 크기/여백 조정 */
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -198,13 +173,26 @@
         margin: 5px;
         font-size: 14px;
         padding: 8px 12px;
+      }
     }
+    .footer-content {
+      text-align: center;
+      padding: 20px;
+    }
+    .footer-intro {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .footer-email, .footer-hours {
+      color: #555;
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- [추가] 공통 헤더 (이용후기 페이지에서 "이용후기"에 active 클래스 추가) -->
+  <!-- 공통 헤더 (리뷰 목록 페이지에서도 header.js 활용) -->
   <header>
     <div class="header-left">
       <img class="logo" src="logo.webp" alt="Wolf Rent 로고" loading="lazy">
@@ -214,10 +202,8 @@
         <a href="남친대행.html" class="button">울프렌트 소개</a>
         <a href="역할대행.html" class="button">컨텐츠</a>
         <a href="애인대행.html" class="button">자주 묻는 질문</a>
-        <!-- 여기서 '이용후기' 링크에만 .active 적용 -->
         <a href="한국렌탈남친.html" class="button active">이용후기</a>
         <a href="렌탈남친.html" class="button">고민상담</a>
-
       </nav>
     </div>
     <div class="spacer"></div>
@@ -231,7 +217,7 @@
           style="width: 200px; height: 50px; cursor: pointer;"
           loading="lazy"
         />
-    </div>
+      </div>
     </form>
   </header>
 
@@ -241,13 +227,81 @@
   </div>
   
   <div class="reviews-container">
-    <!-- 리뷰 목록 영역 (현재는 후기가 없으므로 안내 메시지 표시) -->
-    <div class="no-reviews">
-      서비스 준비 단계입니다.<br>
-      클릭해주셔서 감사합니다!.
-    </div>
-    <!-- 리뷰 작성 버튼: 클릭 시 리뷰 작성 폼 페이지(review-form.html)로 이동 -->
+    <!-- 초기에는 "리뷰 준비 단계" 메시지 대신 로딩 중 메시지를 표시 -->
+    <div class="no-reviews" id="loadingMessage">리뷰를 불러오는 중입니다...</div>
+  </div>
+  
+  <!-- 리뷰 작성 버튼 (review-form.html로 이동) -->
+  <div style="text-align: center; margin-top: 20px;">
     <a href="review-form.html" class="submit-review">리뷰 작성하기</a>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 렌탈남친 서비스 | 서울 및 전국 서비스 가능</p>
+      <div class="footer-intro">남친대행, 렌탈남친, 애인대행 서비스를 제공하는 울프렌트입니다.</div>
+      <div class="footer-hours">영업시간: 24시간</div>
+      <div class="footer-email">이메일: chugbunnam@gmail.com</div>
+      <a href="https://www.instagram.com/wolf_rent__" target="_blank" class="instagram-footer">인스타그램: @wolf_rent__</a>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "울프렌트",
+        "image": "https://wolfrent.netlify.app/logo.png",
+        "url": "https://wolfrent.netlify.app/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "대구",
+          "addressRegion": "대구광역시",
+          "addressCountry": "KR"
+        },
+        "description": "남친대행, 렌탈남친, 데이트대행 등 맞춤형 데이트 서비스를 제공하는 울프렌트.",
+        "openingHours": ["Mo-Su 00:00-23:59"]
+      }
+    </script>
+  </footer>
+
+  <!-- Firestore에서 리뷰를 불러오는 스크립트 -->
+  <script type="module">
+    import { db } from "./header.js";
+    import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+    async function loadReviews() {
+      const reviewsContainer = document.querySelector(".reviews-container");
+      const loadingMessage = document.getElementById("loadingMessage");
+      try {
+        // "reviews" 컬렉션의 문서들을 작성 시간 기준 내림차순 정렬
+        const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(q);
+        // 기존 메시지 제거
+        reviewsContainer.innerHTML = "";
+        if (querySnapshot.empty) {
+          reviewsContainer.innerHTML = '<div class="no-reviews">아직 리뷰가 없습니다.</div>';
+        } else {
+          querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            // Firestore의 createdAt은 Timestamp 객체이므로, seconds 값을 이용해 Date 생성 (Firebase 버전에 따라 다를 수 있음)
+            const createdAt = data.createdAt?.toDate ? data.createdAt.toDate() : new Date(data.createdAt);
+            const reviewElement = document.createElement("div");
+            reviewElement.style.textAlign = "left";
+            reviewElement.style.marginBottom = "20px";
+            reviewElement.innerHTML = `
+              <strong>${data.name}</strong> <small>(${createdAt.toLocaleString()})</small><br>
+              평점: ${data.rating} / 5<br>
+              ${data.review}<hr>
+            `;
+            reviewsContainer.appendChild(reviewElement);
+          });
+        }
+      } catch (error) {
+        console.error("리뷰 불러오기 오류:", error);
+        reviewsContainer.innerHTML = '<div class="no-reviews">리뷰를 불러오는 중 오류가 발생했습니다.</div>';
+      }
+    }
+
+    loadReviews();
+  </script>
 </body>
 </html>
