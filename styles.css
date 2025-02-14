@@ -361,21 +361,21 @@ p {
     }
     /* 텍스트 요소들은 데스크톱과 유사하게 절대(또는 relative) 위치를 유지하여 이미지 안에 오버레이되도록 함 */
     .pyt {
-        font-size: 2.5em;
+        font-size: 1.5em;
         position: relative;
         left: 50px;
         bottom: -110px;
         animation: slide 2s ease-out;
     }
     .slogan {
-        font-size: 2.5em;
+        font-size: 1.5em;
         position: relative;
         left: 50px;
         bottom: -110px;
         animation: slide 2s ease-out;
     }
     .pyf {
-        font-size: 2.5em;
+        font-size: 1.5em;
         position: absolute;
         right: 50px;
         bottom: 80px;
@@ -383,7 +383,7 @@ p {
         text-align: start;
     }
     .contents1 {
-        font-size: 2.5em;
+        font-size: 1.5em;
         position: absolute;
         right: 50px;
         bottom: 50px;
@@ -394,7 +394,7 @@ p {
         white-space: normal;  /* 줄바꿈 허용 */
     }
     .contents2 {
-        font-size: 2.5em;
+        font-size: 1.5em;
         position: absolute;
         right: 50px;
         bottom: 30px;
